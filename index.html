@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <link rel="stylesheet" href="./css/style.css">
     <meta charset="utf-8">
@@ -10,8 +12,9 @@
     <div class="container flex border">
       <div class="con-left flex column border">
         <div class="cl-up bg-gray flex s-between">
-          <div class="">
-
+          <div class="contact flex align" v-for="item in pictures" v-if="item.img === '_io' ">
+            <img :src="'./img/avatar'+item.img+'.jpg'" class="pic">
+            <h2 class="fSzContact" >Nome Utente</h2>
           </div>
           <div>
             <ul class="list-style">
@@ -41,13 +44,17 @@
           <input type="text" class="border" placeholder="Cerca o inizia una nuova chat">
         </div>
         <div class="cl-contacts flex column grow border">
-
+          <div class="contact flex align" v-for="item in pictures" v-if="!item.img === '_io' ">
+            <img :src="'./img/avatar'+item.img+'.jpg'" class="pic">
+            <h2 class="fSzContact" >{{item.name}}</h2>
+          </div>
         </div>
       </div>
       <div class="con-right flex column grow border">
         <div class="cr-up bg-gray flex s-between">
-          <div class="">
-
+          <div class="contact flex align" v-for="item in pictures" v-if="item.img === '_1' ">
+            <img :src="'./img/avatar'+item.img+'.jpg'" class="pic">
+            <h2 class="fSzContact" >{{item.name}}</h2>
           </div>
           <div>
             <ul class="list-style">
@@ -80,5 +87,9 @@
         </div>
       </div>
     </div>
+    <!-- VUE.JS -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <!-- JAVASCRIPT LINK -->
+    <script type="text/javascript" src="./js/main.js" ></script>
   </body>
 </html>
