@@ -47,7 +47,7 @@ body{
   display:inline-block
 }
 .fSzContact{
-  font-size: 18px;
+  font-size: 15px;
   display: inline-block;
   text-transform: capitalize;
 }
@@ -58,14 +58,14 @@ body{
   transition: 0.3s;
 }
 /* STYLE */
-.container{
+.app{
   width: 940px;
   max-height: 100vh;
   height: 650px;
   background: white;
 }
 /* con-left */
-.container .con-left{
+.con-left{
   flex-shrink: 1;
   flex-basis: 35%;
 }
@@ -93,7 +93,7 @@ body{
   color: #81e6f7;
 }
 .cl-notify h3{
-  font-size: 13px;
+  font-size: 10px;
 }
 .cl-notify span{
   display: inline-block;
@@ -126,6 +126,11 @@ body{
 }
 .con-right .cr-up{
   height: 50px;
+}
+.cr-up > div > div >h3{
+  color: gray;
+  font-size: 11px;
+  font-weight: lighter;
 }
 .con-right .cr-down{
   height: 50px;
