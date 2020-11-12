@@ -17,7 +17,7 @@ body{
   flex-direction: column;
 }
 .border{
-  border: 1px solid black;
+  border: none;
 }
 .grow{
   flex-grow: 1;
@@ -34,7 +34,10 @@ body{
   display: inline-block;
   margin-right: 10px;
   color: gray;
-  font-size: 13px;
+  font-size: 15px;
+}
+.align{
+  align-items: center;
 }
 /* HOVERS */
 .list-style li:hover{
@@ -66,8 +69,37 @@ body{
 .cl-notify{
   background-color: #81e6f7;
 }
+.cl-notify > div{
+  margin-left: 10px;
+}
+.cl-notify > div:first-of-type{
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  background-color: white;
+  justify-content: center;
+  color: #81e6f7;
+}
+.cl-notify h3{
+  font-size: 13px;
+}
+.cl-notify span{
+  display: inline-block;
+  font-size: 11px;
+  text-decoration: underline;
+  color: grey;
+}
 .cl-search{
   border: 5px solid #ececec;
+}
+.cl-search input{
+  width: 100%;
+  height: 100%;
+}
+.cl-search i{
+  font-size: 13px;
+  color: grey;
+  margin: 0 10px;
 }
 /* con-right */
 .container .con-right{
@@ -84,4 +116,13 @@ body{
 }
 .cr-down{
   background-color: #efe9df;
+  justify-content: space-around;
+  align-items: center;
+}
+.cr-down input{
+  height: 30px;
+  padding: 7px;
+  border-radius: 2px;
+  width: 470px;
+  max-width: 50vw;
 }
