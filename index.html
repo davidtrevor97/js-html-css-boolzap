@@ -52,13 +52,14 @@
       </div>
       <div class="con-right flex column grow border">
         <div class="cr-up bg-gray flex s-between">
-          <div class="contact flex align" v-for="item in contacts"  v-if="item.avatar === '_1' ">
-            <img :src="'./img/avatar'+item.avatar+'.jpg'" class="pic">
+          <div class="contact flex align">
+            <img :src="'./img/avatar'+contacts[contactActive].avatar+'.jpg'" class="pic">
             <div>
-              <h2 class="fSzContact" >{{item.name}}</h2>
+              <h2 class="fSzContact" >{{contacts[contactActive].name}}</h2>
               <h3>Ultimo accesso alle 10.35 </h3>
             </div>
           </div>
+
           <div>
             <ul class="list-style">
               <li>
@@ -73,7 +74,7 @@
             </ul>
           </div>
         </div>
-        <div class="cr-mid grow" v-for="'(item,index) in contacts['appearChat(index)'].messages'">
+        <div class="cr-mid grow" v-for="(item,index) in contacts[contactActive].messages">
           <div  v-if="item.status === 'sent' ">
             <div class="message sent">
               {{item.message}}

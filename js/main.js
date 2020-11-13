@@ -9,6 +9,7 @@
 var app = new Vue({
     el: '.app',
     data: {
+        contactActive: 0,
         // nostro account
         user: {
             name: 'Nome Utente',
@@ -104,7 +105,7 @@ var app = new Vue({
     methods: {
       appearChat(index){
         // al click piglia l'indice del div cliccato e inseriscilo nel contacts[indice].messages
-        return index
+        this.contactActive = index;
       },
     }
 });
