@@ -44,7 +44,7 @@
           <input type="text" class="border" placeholder="Cerca o inizia una nuova chat">
         </div>
         <div class="cl-contacts flex column grow border">
-          <div class="contact flex align" v-for="item in contacts" >
+          <div class="contact flex align" v-for="(item,index) in contacts" @click="appearChat(index)">
             <img :src="'./img/avatar'+item.avatar+'.jpg'" class="pic">
             <h2 class="fSzContact" >{{item.name}}</h2>
           </div>
@@ -73,7 +73,24 @@
             </ul>
           </div>
         </div>
-        <div class="cr-mid grow">
+        <div class="cr-mid grow" v-for="'(item,index) in contacts['appearChat(index)'].messages'">
+          <div  v-if="item.status === 'sent' ">
+            <div class="message sent">
+              {{item.message}}
+              <div class="date">
+                {{item.date}}
+              </div>
+            </div>
+          </div>
+          <div v-else-if="item.status === 'received' ">
+            <div class="message">
+              {{item.message}}
+              <div class="date">
+                {{item.date}}
+              </div>
+            </div>
+          </div>
+
         </div>
         <div class="cr-down flex">
           <ul class="list-style">
