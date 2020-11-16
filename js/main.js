@@ -110,22 +110,14 @@ var app = new Vue({
             message:  this.promptUser,
             status: "sent",
             });
-            setTimeout(function(){
+            setTimeout( ()=> {
               this.contacts[contactActive].messages.push({
                 date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
-                message:  "okkkkk",
+                message:  "okk",
                 status: "received",
-                })  }, 3000);
+              })  }, 1000);
             this.promptUser = ""
         }
       }
     }
 });
-
-// newStuff(contactActive){
-//   this.contacts[contactActive].push({
-//   message:  this.promptUser,
-//   })
-//   console.log(this.promptUser)
-//   this.promptUser = ""
-// },
