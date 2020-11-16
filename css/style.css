@@ -135,7 +135,10 @@ body{
   font-size: 11px;
   font-weight: lighter;
 }
-.cr-mid .message{
+.cr-mid{
+  overflow-y: scroll;
+}
+#chat .message{
   position: relative;
   width: 200px;
   min-height: 50px;
@@ -144,11 +147,11 @@ body{
   padding: 5px 10px;
   margin: 20px;
 }
-.cr-mid .sent{
+#chat .sent{
   background-color: #cffdb3;
   margin-left: 400px;
 }
-.cr-mid .date{
+#chat .date{
   position: absolute;
   right: 0;
   bottom: 0;

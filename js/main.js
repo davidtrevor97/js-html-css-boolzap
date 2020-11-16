@@ -1,14 +1,10 @@
-// Aggiungere la visualizzazione dei messaggi appartenenti al contatto. Trovate in allegato screen per lo stile dei messaggi (verdi inviati e bianchi ricevuti).
-// All'inizio facciamo visualizzare i messaggi del primo contatto (Michele).
-// Come visto alla assegnazione, al click sui vari contatti poi mostrare nella sezione dei messaggi proprio quei messaggi appartenenti a quello specifico contatto cliccato.
-// Il contatto attivo avrà uno sfondo colorato, per far vedere nella lista di contatti appunto quale è il contatto attualmente attivo (vedi screen shot).
-// Aggiornare anche nome e avatar del contatto che si trova sopra la sezione dei messaggi.
 /**
  * Boolzapp Vue
  */
 var app = new Vue({
     el: '.app',
     data: {
+        promptUser: "",
         contactActive: 0,
         // nostro account
         user: {
@@ -107,5 +103,20 @@ var app = new Vue({
         // al click piglia l'indice del div cliccato e inseriscilo nel contacts[indice].messages
         this.contactActive = index;
       },
+      newStuff(contactActive){
+        this.contacts[contactActive].messages.push({
+          message:  this.promptUser,
+          status: "sent",
+          });
+          console.log(this.contacts[contactActive].messages)
+      }
     }
 });
+
+// newStuff(contactActive){
+//   this.contacts[contactActive].push({
+//   message:  this.promptUser,
+//   })
+//   console.log(this.promptUser)
+//   this.promptUser = ""
+// },

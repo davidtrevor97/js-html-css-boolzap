@@ -74,32 +74,34 @@
             </ul>
           </div>
         </div>
-        <div class="cr-mid grow" v-for="(item,index) in contacts[contactActive].messages">
-          <div  v-if="item.status === 'sent' ">
-            <div class="message sent">
-              {{item.message}}
-              <div class="date">
-                {{item.date}}
+        <div class="cr-mid grow" >
+          <div id="chat" v-for="(item,index) in contacts[contactActive].messages">
+            <div  v-if="item.status === 'sent' ">
+              <div class="message sent">
+                {{item.message}}
+                <div class="date">
+                  {{item.date}}
+                </div>
+              </div>
+            </div>
+            <div v-else="item.status === 'received' ">
+              <div class="message">
+                {{item.message}}
+                <div class="date">
+                  {{item.date}}
+                </div>
               </div>
             </div>
           </div>
-          <div v-else-if="item.status === 'received' ">
-            <div class="message">
-              {{item.message}}
-              <div class="date">
-                {{item.date}}
-              </div>
-            </div>
-          </div>
-
         </div>
+
         <div class="cr-down flex">
           <ul class="list-style">
             <li>
               <i class="far fa-smile"></i>
             </li>
           </ul>
-          <input type="text" class="border" placeholder="Scrivi un messaggio">
+          <input type="text" class="border" v-model="promptUser" v-on:keyup.enter="newStuff(contactActive)" placeholder="Scrivi un messaggio">
           <ul class="list-style">
             <li>
               <i class="fas fa-microphone"></i>
