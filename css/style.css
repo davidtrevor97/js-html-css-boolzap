@@ -60,6 +60,9 @@ body{
 .contact:hover{
   cursor: pointer;
 }
+.none{
+  display: none;
+}
 /* STYLE */
 .app{
   width: 940px;

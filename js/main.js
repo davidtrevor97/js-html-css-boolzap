@@ -1,9 +1,15 @@
+// BONUS 1
+// Implementare la sezione di ricerca del contatto. Mentre digito nell'input di ricerca i contati vengono filtrati in base al testo inserito nel campo input, come visto all'assegnazione.
+// Ricordate che avete una proprietà visible per ogni contatto di contacts , per gestire la visibilità durante la ricerca del contatto.
+// BONUS 2
+// Rendere dinamico il testo dell'utimo accesso nell'header sopra l'elenco messaggi, cambiandolo con: Ultimo accesso [data e ora dell'ultimo messaggio]
 /**
  * Boolzapp Vue
  */
 var app = new Vue({
     el: '.app',
     data: {
+        promptSearch: "",
         promptUser: "",
         contactActive: 0,
         // nostro account
@@ -118,6 +124,17 @@ var app = new Vue({
               })  }, 1000);
             this.promptUser = ""
         }
-      }
+      },
+      searchContact(promptSearch){
+        let filteredContacts = this.contacts.filter( (element) => {
+          element.name.includes(promptSearch)
+        });
+        console.log(filteredContacts);
+      },
+      showArrow(){
+        if ( this.promptUser != "") {
+          document.getElementsByClassName("fa-microphone").classList.add('none');
+        }
+      },
     }
 });
